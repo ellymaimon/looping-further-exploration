@@ -37,9 +37,8 @@ $(document).ready(function(){
 
   function calculatePalindrome() {
     var phrase = $("#userEntry").val();
-    var newPhrase = phrase.split("").join("");
     var reversedPhrase = phrase.split("").reverse().join("");
-    var updatedPhrase = newPhrase.replace(/[" "]/gi, '');
+    var updatedPhrase = phrase.replace(/[" "]/gi, '');
     var newReversedPhrase = reversedPhrase.replace(/[" "]/gi, '');
 
     if(updatedPhrase === newReversedPhrase) {
