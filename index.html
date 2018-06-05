@@ -11,14 +11,25 @@
 <body>
   <div class="container">
     <h1>Factorials!</h1>
-    <form>
+    <form id="factorial">
       <label for="userNumber">Enter the number you would like computed:</label>
       <input type="number" name="userNumber" id="userNumber"><br>
-      <button type="submit" name="factorialButton">Calculate factorial!!!</button>
+      <button type="submit">Calculate factorial!!!</button>
     </form>
     <div>
-      <p id="result"></p>
+      <p id="resultFactorial"></p>
     </div>
+
+    <h1>Palindromes</h1>
+    <form id="palindrome">
+      <label for="userEntry">Enter a word or sentence:</label>
+      <input type="text" name="userEntry" id="userEntry"><br>
+      <button type="submit">Is it a palindrome???</button>
+    </form>
+    <div>
+      <p id="resultPalindrome"></p>
+    </div>
+
   </div>
 </body>
 </html>

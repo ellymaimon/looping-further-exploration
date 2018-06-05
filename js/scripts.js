@@ -1,8 +1,14 @@
 $(document).ready(function(){
-  $("form").submit(function(event){
+  $("form#factorial").submit(function(event){
     event.preventDefault();
     calculateFactorial();
   });
+
+  $("form#palindrome").submit(function(event){
+    event.preventDefault();
+    calculatePalindrome();
+  });
+
 
   function calculateFactorial() {
     var number = parseInt($("#userNumber").val());
@@ -25,7 +31,25 @@ $(document).ready(function(){
   }
 
   function addResult(result, original) {
-    $("#result").text(original + "! is " + result);
+    $("#resultFactorial").text(original + "! is " + result);
     $("#userNumber").val("");
   }
+
+  function calculatePalindrome() {
+    var phrase = $("#userEntry").val();
+    var newPhrase = phrase.split("").join("");
+    var reversedPhrase = phrase.split("").reverse().join("");
+    var updatedPhrase = newPhrase.replace(/[" "]/gi, '');
+    var newReversedPhrase = reversedPhrase.replace(/[" "]/gi, '');
+
+    if(updatedPhrase === newReversedPhrase) {
+      $("#resultPalindrome").text(updatedPhrase + " " + newReversedPhrase + ". This is a palindrome!");
+    } else {
+      $("#resultPalindrome").text(updatedPhrase + " " + newReversedPhrase + ". Not a palindrome!");
+    }
+
+  }
+
+
+
 });
